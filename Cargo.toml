@@ -1,0 +1,12 @@
+[package]
+name = "runner"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+anyhow = "1.0.69"
+wasm-tools = "1.0.23"
+wasmparser = "0.100.0"
+wasmtime = { git = "https://github.com/bytecodealliance/wasmtime", branch = "main", features = ["component-model", "cranelift"] }

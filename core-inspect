@@ -1,0 +1,34 @@
+  0x0 | 00 61 73 6d | version 1 (Module)
+      | 01 00 00 00
+  0x8 | 01 05       | type section
+  0xa | 01          | 1 count
+  0xb | 60 00 01 7f | [type 0] Func(FuncType { params: [], returns: [I32] })
+  0xf | 03 02       | func section
+ 0x11 | 01          | 1 count
+ 0x12 | 00          | [func 0] type 0
+ 0x13 | 05 03       | memory section
+ 0x15 | 01          | 1 count
+ 0x16 | 00 01       | [memory 0] MemoryType { memory64: false, shared: false, initial: 1, maximum: None }
+ 0x18 | 07 0f       | export section
+ 0x1a | 02          | 2 count
+ 0x1b | 05 61 70 70 | export Export { name: "apply", kind: Func, index: 0 }
+      | 6c 79 00 00
+ 0x23 | 03 6d 65 6d | export Export { name: "mem", kind: Memory, index: 0 }
+      | 02 00      
+ 0x29 | 0a 06       | code section
+ 0x2b | 01          | 1 count
+============== func 0 ====================
+ 0x2c | 04          | size of function
+ 0x2d | 00          | 0 local blocks
+ 0x2e | 41 00       | i32_const value:0
+ 0x30 | 0b          | end
+ 0x31 | 0b 2d       | data section
+ 0x33 | 02          | 2 count
+ 0x34 | 00          | data memory[0]
+ 0x35 | 41 00       | i32_const value:0
+ 0x37 | 0b          | end
+ 0x38 |-------------| ... 8 bytes of data
+ 0x41 | 00          | data memory[0]
+ 0x42 | 41 08       | i32_const value:8
+ 0x44 | 0b          | end
+ 0x45 |-------------| ... 26 bytes of data
