@@ -1,0 +1,62 @@
+  0x0 | 00 61 73 6d | version 12 (Component)
+      | 0c 00 01 00
+  0x8 | 01 5d       | [core module 0] inline size
+    0xa | 00 61 73 6d | version 1 (Module)
+        | 01 00 00 00
+   0x12 | 01 07       | type section
+   0x14 | 01          | 1 count
+   0x15 | 60 02 7f 7f | [type 0] Func(FuncType { params: [I32, I32], returns: [I32] })
+        | 01 7f      
+   0x1b | 03 02       | func section
+   0x1d | 01          | 1 count
+   0x1e | 00          | [func 0] type 0
+   0x1f | 07 0c       | export section
+   0x21 | 01          | 1 count
+   0x22 | 08 63 6f 6d | export Export { name: "comp-add", kind: Func, index: 0 }
+        | 70 2d 61 64
+        | 64 00 00   
+   0x2d | 0a 09       | code section
+   0x2f | 01          | 1 count
+============== func 0 ====================
+   0x30 | 07          | size of function
+   0x31 | 00          | 0 local blocks
+   0x32 | 20 00       | local_get local_index:0
+   0x34 | 20 01       | local_get local_index:1
+   0x36 | 6a          | i32_add
+   0x37 | 0b          | end
+   0x38 | 00 2d       | custom section
+   0x3a | 09 70 72 6f | name: "producers"
+        | 64 75 63 65
+        | 72 73      
+   0x44 |-------------| ... 35 bytes of data
+ 0x67 | 02 04       | core instance section
+ 0x69 | 01          | 1 count
+ 0x6a | 00 00 00    | [core instance 0] Instantiate { module_index: 0, args: [] }
+ 0x6d | 07 12       | component type section
+ 0x6f | 01          | 1 count
+ 0x70 | 40 02 04 6c | [type 0] Func(ComponentFuncType { params: [("left", Primitive(U32)), ("right", Primitive(U32))], results: Unnamed(Primitive(U32)) })
+      | 65 66 74 79
+      | 05 72 69 67
+      | 68 74 79 00
+      | 79         
+ 0x81 | 06 0e       | component alias section
+ 0x83 | 01          | 1 count
+ 0x84 | 00 00 01 00 | alias [core func 0] CoreInstanceExport { kind: Func, instance_index: 0, name: "comp-add" }
+      | 08 63 6f 6d
+      | 70 2d 61 64
+      | 64         
+ 0x91 | 08 06       | canonical function section
+ 0x93 | 01          | 1 count
+ 0x94 | 00 00 00 00 | [func 0] Lift { core_func_index: 0, type_index: 0, options: [] }
+      | 00         
+ 0x99 | 00 2d       | custom section
+ 0x9b | 09 70 72 6f | name: "producers"
+      | 64 75 63 65
+      | 72 73      
+ 0xa5 |-------------| ... 35 bytes of data
+ 0xc8 | 0b 0e       | component export section
+ 0xca | 01          | 1 count
+ 0xcb | 08 63 6f 6d | export ComponentExport { name: "comp-add", url: "", kind: Func, index: 0, ty: None }
+      | 70 2d 61 64
+      | 64 00 01 00
+      | 00         
